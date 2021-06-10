@@ -1,9 +1,20 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import CreateJob from '../modals/CreateJob';
+import Card from './Card';
 
 const JobList = () => {
     const [modal, setModal] = useState(false);
-    const [jobList, setJobList] = useState([]);
+    const [jobList, setJobList] = useState([])
+
+    
+    useEffect(() => {
+        let arr = localStorage.getItem("jobList")
+        
+        if(arr){
+            let obj = JSON.parse(arr)
+            setJobList(obj)
+        }
+    }, [])
 
     const toggle = () => {
         setModal(!modal);
@@ -12,9 +23,9 @@ const JobList = () => {
     const saveJob = (jobObj) => {
         let tempList = jobList
         tempList.push(jobObj)
-    //     localStorage.setItem("jobList", JSON.stringify(tempList))
-        setJobList(tempList)
+        localStorage.setItem("jobList", JSON.stringify(tempList))
         setModal(false)
+        setJobList(tempList)
     }
 
     return (
