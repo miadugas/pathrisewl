@@ -29,21 +29,21 @@ const CreateWishPopup = ({modal, toggle, save}) => {
 
     return (
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Create Wish</ModalHeader>
+            <ModalHeader toggle={toggle}>Add a company to your wish list</ModalHeader>
             <ModalBody>
             
                     <div className = "form-group">
-                        <label>Wish Name</label>
-                        <input type="text" className = "form-control" value = {wishName} onChange = {handleChange} name = "wishName"/>
+                        <label></label>
+                        <input type="text" className = "form-control" value = {wishName} onChange = {handleChange} name = "wishName" placeholder="Company name here ..."/>
                     </div>
                     <div className = "form-group">
-                        <label>Description</label>
-                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
+                        <label></label>
+                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description" placeholder="Position desired here ..."></textarea>
                     </div>
                 
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={handleSave}>Create</Button>{' '}
+            <Button color="info" onClick={handleSave}>Create</Button>{' '}
             <Button color="secondary" onClick={toggle}>Cancel</Button>
             </ModalFooter>
       </Modal>

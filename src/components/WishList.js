@@ -48,8 +48,8 @@ const WishList = () => {
     return (
         <>
             <div className = "header text-center">
-                <h3>Wish List</h3>
-                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >Create Wish</button>
+                <h3>Your Job Wish List</h3>
+                <button className = "btn btn-info mt-2" onClick = {() => setModal(true)} > + Add to List </button>
             </div>
             <div className = "wish-container">
             {wishList && wishList.map((obj , index) => <Card wishObj = {obj} index = {index} deleteWish = {deleteWish} updateListArray = {updateListArray}/> )}

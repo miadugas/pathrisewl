@@ -33,15 +33,15 @@ const EditWishPopup = ({modal, toggle, updateWish, wishObj}) => {
 
     return (
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Update Wish</ModalHeader>
+            <ModalHeader toggle={toggle}>Update Company</ModalHeader>
             <ModalBody>
             
                     <div className = "form-group">
-                        <label>Wish Name</label>
+                        <label>Company Name</label>
                         <input type="text" className = "form-control" value = {wishName} onChange = {handleChange} name = "wishName"/>
                     </div>
                     <div className = "form-group">
-                        <label>Description</label>
+                        <label>Job Description</label>
                         <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
                     </div>
                 

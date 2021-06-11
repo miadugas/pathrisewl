@@ -50,6 +50,7 @@ const Card = ({wishObj, index, deleteWish, updateListArray}) => {
                     <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
                     <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
                 </div>
+                
         </div>
         <EditWish modal = {modal} toggle = {toggle} updateWish = {updateWish} wishObj = {wishObj}/>
         </div>
