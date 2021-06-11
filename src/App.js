@@ -1,13 +1,13 @@
 
 import './App.css';
-import JobList from './components/JobList';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import WishList from './components/WishList'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 function App() {
   return (
     <div className="App">
-        <JobList />
+      <WishList />
     </div>
   );
 }

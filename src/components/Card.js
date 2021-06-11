@@ -1,11 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import EditWish from '../modals/EditWish'
 
-
-
-
-
-
-const Card = () => {
+const Card = ({wishObj, index, deleteWish, updateListArray}) => {
+    const [modal, setModal] = useState(false);
 
     const colors = [
         {
@@ -30,19 +27,31 @@ const Card = () => {
         }
     ]
 
+    const toggle = () => {
+        setModal(!modal);
+    }
+
+    const updateWish = (obj) => {
+        updateListArray(obj, index)
+    }
+
+    const handleDelete = () => {
+        deleteWish(index)
+    }
+
     return (
         <div class = "card-wrapper mr-5">
             <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
-            <div class = "task-holder">
-                <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{jobObj.Name}</span>
-                <p className = "mt-3">{taskObj.Description}</p>
+            <div class = "wish-holder">
+                <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{wishObj.Name}</span>
+                <p className = "mt-3">{wishObj.Description}</p>
 
                 <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
                     <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
                     <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
                 </div>
         </div>
-        <EditTask modal = {modal} toggle = {toggle} updateJob = {updateJob} jobObj = {jobObj}/>
+        <EditWish modal = {modal} toggle = {toggle} updateWish = {updateWish} wishObj = {wishObj}/>
         </div>
     );
 };
